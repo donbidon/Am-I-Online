@@ -1,0 +1,125 @@
+{
+  "extension_name": {
+    "message": "Онлайн ли я?"
+  },
+  "extension_description": {
+    "message": "Проверка наличия интернет-подключения"
+  },
+
+
+  "page_title": {
+    "message": "Дополнение «Онлайн ли я?»"
+  },
+
+  "tab_history": {
+    "message": "История"
+  },
+  "tab_history_tooltip": {
+    "message": "В планах, следите за эфиром..."
+  },
+  "tab_settings": {
+    "message": "Настройки"
+  },
+  "tab_about": {
+    "message": "О дополнении"
+  },
+
+ "request_period": {
+    "message": "Период обновления, сек."
+  },
+  "request_period_deviation": {
+    "message": "Отклонение периода обновения, %"
+  },
+  "response_timeout": {
+    "message": "Время ожидания ответа, сек."
+  },
+  "if_became_online": {
+    "message": "При появлении подключения"
+  },
+  "if_became_offline": {
+    "message": "При пропадании подключения"
+  },
+  "checkbox_do_notify": {
+    "message": "Уведомлять"
+  },
+  "button_upload_sound": {
+    "message": "Загрузить звук уведомления"
+  },
+  "message_sound_uploaded": {
+    "message": "Звук уведомления загружен"
+  },
+  "button_play": {
+    "message": "Воспроизвести"
+  },
+  "checkbox_use": {
+    "message": "Использовать"
+  },
+  "urls": {
+    "message": "Ссылка для проверки подключения"
+  },
+  "button_apply": {
+    "message": "Применить"
+  },
+  "message_enter_valid_url": {
+    "message": "Пожалуйста, введите корректную ссылку!"
+  },
+  "message_applied": {
+    "message": "Настройки сохранены."
+  },
+  "button_restore_defaults": {
+    "message": "Восстановить настройки по умолчанию"
+  },
+  "message_confirm_restore": {
+    "message": "Вы уверены, что хотите восстановить настройки?"
+  },
+  "yes": {
+    "message": "Да"
+  },
+  "no": {
+    "message": "Нет"
+  },
+  "message_defaults_restored": {
+    "message": "Настройки по умолчанию восстановлены."
+  },
+
+  "version": {
+    "message": "Версия"
+  },
+  "details": {
+    "message": "Данное дополнение проверяет наличие подключения к интернету и уведомляет о пропадании/восстановлении соединения всплавающим окном и разными звуковыми сигналами для онлайн/оффлайн состояния."
+  },
+  "roadmap": {
+    "message": "В планах"
+  },
+  "roadmap_1": {
+    "message": "Вкладка с историей состояний с возможностью фильтрации по дате/времени, типу события."
+  },
+  "social_network_groups": {
+    "message": "Группы в соцсетях"
+  },
+  "donate": {
+    "message": "Сбор средств"
+  },
+  "donate_ym": {
+    "message": "Яндекс.Деньги, Visa, MasterCard, Maestro"
+  },
+  "donaters": {
+    "message": "Люди, поддержавшие данный проект"
+  },
+
+  "state_online": {
+    "message": "\nО Н Л А Й Н"
+  },
+  "state_offline": {
+    "message": "\nО Ф Ф Л А Й Н"
+  },
+  "notification_title": {
+    "message": "Онлайн ли я? @ $1"
+  },
+  "popup_state_online": {
+    "message": "О Н Л А Й Н"
+  },
+  "popup_state_offline": {
+    "message": "О Ф Ф Л А Й Н"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "extension_name": {
+    "message": "Am I Online?"
+  },
+  "extension_description": {
+    "message": "Internet connection checker"
+  },
+
+
+  "page_title": {
+    "message": "«Am I Online?» add-on settings"
+  },
+
+  "tab_history": {
+    "message": "History"
+  },
+  "tab_history_tooltip": {
+    "message": "Not available now, coming soon..."
+  },
+  "tab_settings": {
+    "message": "Settings"
+  },
+  "tab_about": {
+    "message": "About"
+  },
+
+  "request_period": {
+    "message": "Request's period, sec."
+  },
+  "request_period_deviation": {
+    "message": "Deviation of request's period, %"
+  },
+  "response_timeout": {
+    "message": "Response's timeout, sec."
+  },
+  "if_became_online": {
+    "message": "If became online"
+  },
+  "if_became_offline": {
+    "message": "If became offline"
+  },
+  "checkbox_do_notify": {
+    "message": "Do notify"
+  },
+  "button_upload_sound": {
+    "message": "Upload notification sound"
+  },
+  "message_sound_uploaded": {
+    "message": "Notification sound uploaded"
+  },
+  "button_play": {
+    "message": "Play"
+  },
+  "checkbox_use": {
+    "message": "Use"
+  },
+  "urls": {
+    "message": "URL to test intrnet connection"
+  },
+  "button_apply": {
+    "message": "Apply"
+  },
+  "message_enter_valid_url": {
+    "message": "Please, enter valid URL!"
+  },
+  "message_applied": {
+    "message": "Settings applied."
+  },
+  "button_restore_defaults": {
+    "message": "Restore default settings"
+  },
+  "message_confirm_restore": {
+    "message": "Are you sure to restore settings?"
+  },
+  "yes": {
+    "message": "Yes"
+  },
+  "no": {
+    "message": "No"
+  },
+  "message_defaults_restored": {
+    "message": "Default settings restored."
+  },
+
+  "version": {
+    "message": "Version"
+  },
+  "details": {
+    "message": "This add-on periodically checks for internet connection and notifies you if status was changed by popup window and separate online/offline sound alerts."
+  },
+  "roadmap": {
+    "message": "Roadmap"
+  },
+  "roadmap_1": {
+    "message": "Notifications history tab, filtering by date/time, event type."
+  },
+  "social_network_groups": {
+    "message": "Social Network Groups"
+  },
+  "donate": {
+    "message": "Donate"
+  },
+  "donate_ym": {
+    "message": "Yandex.Money, Visa, MasterCard, Maestro"
+  },
+  "donaters": {
+    "message": "People supported this project"
+  },
+
+
+  "state_online": {
+    "message": "\nO N L I N E"
+  },
+  "state_offline": {
+    "message": "\nO F F L I N E"
+  },
+  "notification_title": {
+    "message": "Am I Online? @ $1"
+  },
+
+  "popup_state_online": {
+    "message": "O N L I N E"
+  },
+  "popup_state_offline": {
+    "message": "O F F L I N E"
+  }
+}

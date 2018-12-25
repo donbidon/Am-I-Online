@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+
+  "author": "don.bidon",
+  "default_locale": "en",
+  "name": "__MSG_extension_name__",
+  "description": "__MSG_extension_description__",
+  "version": "0.1.1",
+
+  "applications": {
+    "gecko": {
+      "strict_min_version": "57.0"
+    }
+  },
+
+  "permissions": [
+    "storage",
+    "notifications",
+
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": [
+      "backend/XMLHttpRequestAsPromise.js",
+      "backend/Request.js",
+      "backend/core.js"
+    ]
+  },
+
+  "icons": {
+    "48": "frontend/images/icon.png",
+    "96": "frontend/images/icon@2x.png"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "48": "frontend/images/icon.png",
+      "96": "frontend/images/icon@2x.png"
+    },
+    "default_title": "__MSG_extension_name__",
+    "browser_style": true,
+    "default_popup": "frontend/popup/popup.html"
+  },
+  "options_ui": {
+    "open_in_tab": true,
+    "browser_style": true,
+    "page": "frontend/options/options.html"
+  }
+}
