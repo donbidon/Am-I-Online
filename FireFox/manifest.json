@@ -5,11 +5,12 @@
   "default_locale": "en",
   "name": "__MSG_extension_name__",
   "description": "__MSG_extension_description__",
-  "version": "0.1.1",
+  "version": "0.1.2",
 
   "applications": {
     "gecko": {
-      "strict_min_version": "57.0"
+      "strict_min_version": "57.0",
+      "id": "{e04b000c-dfe2-4f14-a2f3-620ba8303513}"
     }
   },
 
