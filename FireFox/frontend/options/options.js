@@ -164,8 +164,8 @@ function _updateSettingsTab() {
     for (let option of ["requestPeriod", "requestPeriodDeviation", "responseTimeout"]) {
         let node = document.getElementById(option);
         node.value = _options.storage[option];
-        node.min = _options[`${option}Borders`].min;
-        let max = _options[`${option}Borders`].max;
+        node.min = _options.borders[option].min;
+        let max = _options.borders[option].max;
         if (max >= node.min) {
             node.max = max;
         }

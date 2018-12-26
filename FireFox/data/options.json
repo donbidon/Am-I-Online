@@ -1,6 +1,6 @@
 {
   "defaults": {
-    "environment": "development",
+    "environment": "production",
 
     "lastOptionsTab": "about",
 
@@ -36,21 +36,44 @@
     ]
   },
 
-  "requestPeriodBorders": {
-    "min": 60,
-    "max": -1
+  "borders": {
+    "production": {
+      "requestPeriod": {
+        "min": 60,
+        "max": -1
+      },
+      "requestPeriodDeviation": {
+        "min": 1,
+        "max": 100
+      },
+      "responseTimeout": {
+        "min": 5,
+        "max": 30
+      },
+      "historyStoragePeriod": {
+        "min": 24,
+        "max": 24
+      }
+    },
+    "development": {
+      "requestPeriod": {
+        "min": 5,
+        "max": -1
+      },
+      "requestPeriodDeviation": {
+        "min": 1,
+        "max": 100
+      },
+      "responseTimeout": {
+        "min": 1,
+        "max": 30
+      },
+      "historyStoragePeriod": {
+        "min": 0,
+        "max": -1
+      }
+    }
   },
-  "requestPeriodDeviationBorders": {
-    "min": 1,
-    "max": 100
-  },
-  "responseTimeoutBorders": {
-    "min": 5,
-    "max": 30
-  },
-  "historyStoragePeriodBorders": {
-    "min": 24,
-    "max": 24
-  },
+
   "maxUrlsQuantity": 1
 }

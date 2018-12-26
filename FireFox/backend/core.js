@@ -40,19 +40,19 @@ browser.runtime.onMessage.addListener((request) => {
 
 function getOptions() {
     return Request.getJSON("/data/options.json").then((options) => {
-        let response = options;
         return browser.storage.local.get(null).then((storage) => {
             if ("{}" === JSON.stringify(storage)) {
-                response["storage"] =
+                options.storage =
                     JSON.parse(JSON.stringify(options.defaults));
-                response["storage"]["version"] =
+                options.storage.version =
                     (browser.runtime.getManifest()).version;
-                browser.storage.local.set(response["storage"]);
+                browser.storage.local.set(options.storage);
             } else {
-                response["storage"] = storage;
+                options.storage = storage;
             }
+            options.borders = options.borders[options.storage.environment];
 
-            return Promise.resolve(response);
+            return Promise.resolve(options);
         });
     });
 }
@@ -141,7 +141,7 @@ function _setTimer() {
     let
         scope = _options.storage,
         period = Math.ceil(Math.max(
-            _options.requestPeriodBorders.min,
+            _options.borders.requestPeriod.min,
             scope.requestPeriod * (1 + (Math.random() * scope.requestPeriodDeviation * 2 - scope.requestPeriodDeviation / 2) / 100)
         ));
 
