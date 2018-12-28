@@ -42,6 +42,27 @@ function _discardFormSubmission(evt) {
 
 // } Common functions
 
+// Tab "History" functions {
+
+function _updateHistoryTab() {
+    $("#historyTableBody").html("");
+    for (let record of _options.storage.history) {
+        let
+            state = (record.s ? "online" : "offline");
+            scope = {
+                "dt": new Date(record.t).toLocaleString(),
+                "class": state,
+                "state": browser.i18n.getMessage(
+                    "history_state_" + state
+                )
+            },
+            row = TENgine.r("historyRow", scope);
+        $("#historyTableBody").append(row);
+    }
+}
+
+// } Tab "History" functions
+
 // Tab "Settings" functions {
 
 function _requestPeriodChanged() {
@@ -141,7 +162,9 @@ function _applySettings() {
 
     browser.storage.local.get(null)
         .then((storage) => {
-            for (let option of ["requestPeriod", "requestPeriodDeviation", "responseTimeout"]) {
+            for (let option of
+                ["requestPeriod", "requestPeriodDeviation", "responseTimeout", "historyStoragePeriod"]
+            ) {
                 storage[option] = document.getElementById(option).value;
             }
             storage.doNotify = _options.storage.doNotify;
@@ -161,7 +184,9 @@ function _applySettings() {
 }
 
 function _updateSettingsTab() {
-    for (let option of ["requestPeriod", "requestPeriodDeviation", "responseTimeout"]) {
+    for (let option of
+        ["requestPeriod", "requestPeriodDeviation", "responseTimeout", "historyStoragePeriod"]
+    ) {
         let node = document.getElementById(option);
         node.value = _options.storage[option];
         node.min = _options.borders[option].min;
@@ -209,6 +234,7 @@ $(document).ready(() => {
         event.preventDefault();
     });
 
+    /*
     // Fills "title" attribute for tooltips using locales
     $('[data-toggle="tooltip"]').each((i, node) => {
         node.title = browser.i18n.getMessage(
@@ -218,7 +244,26 @@ $(document).ready(() => {
 
     // From tooltips docs
     $(() => { $("[data-toggle=tooltip]").tooltip(); });
+    */
 
+    // Tab "History" {
+
+    $("#buttonClear").click(() => {
+        _options.storage.history = [];
+        browser.storage.local.set(_options.storage).then(() => {
+            browser.runtime.sendMessage({
+                "target": "core",
+                "command": "reloadOptions"
+            }).then(() => {
+                $("#historyTableBody").html("");
+            });
+        }).catch((e) => {
+            console.error(e);
+        });
+    });
+    $("#formHistory").submit(_discardFormSubmission);
+
+    // } Tab "History"
     // Tab "Settings" {
 
     $(requestPeriodNode).change(_requestPeriodChanged);
@@ -264,6 +309,8 @@ $(document).ready(() => {
                 $(event.target).attr("aria-controls");
             _saveOptions(false);
         });
+
+        _updateHistoryTab();
 
         // Hides spinner, shows content
         $("#loader").fadeOut(() => {

@@ -21,7 +21,7 @@
 <div class="hCentered">
   <div class="content">
     <ul class="nav nav-tabs" role="tablist">
-      <li class="nav-item disabled" data-toggle="tooltip" data-placement="bottom" title="history">
+      <li class="nav-item" data-placement="bottom" title="history">
         <a
           class="i18n_tab_history nav-link disabled"
           data-toggle="tab"
@@ -52,9 +52,31 @@
     <div class="tab-content">
 
       <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
-        @todo: History tab
-      </div>
 
+        <form id="formHistory">
+          <fieldset class="form-group">
+            <div class="buttons">
+              <button id="buttonClear" class="i18n_button_clear btn btn-warning"></button>
+            </div>
+          </fieldset>
+
+        </form>
+
+        <div id="historyContent">
+          <template id="historyRow">
+            <tr>
+              <td>${dt}</td>
+              <td class="${class}">${state}</td>
+            </tr>
+          </template>
+
+          <table id="historyTable">
+            <tbody id="historyTableBody">
+            </tbody>
+          </table>
+        </div>
+
+      </div>
       <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
 
         <div id="modalSoundUploaded" class="modal fade" tabindex="-1" role="alert" aria-hidden="true">
@@ -132,6 +154,10 @@
             <label for="responseTimeout" class="i18n_response_timeout"></label>
             <input id="responseTimeout" type="number" class="form-control"/>
           </div>
+          <div class="form-group">
+            <label for="historyStoragePeriod" class="i18n_history_storage_period"></label>
+            <input id="historyStoragePeriod" type="number" class="form-control"/>
+          </div>
 
           <fieldset class="form-group">
             <legend class="i18n_if_became_online"></legend>
@@ -145,8 +171,6 @@
                 />
                 <span class="i18n_checkbox_do_notify"></span>
               </label>
-            </div>
-            <div class="form-check">
               <button
                 data-type="online"
                 class="i18n_button_upload_sound btn btn-default"
@@ -179,8 +203,6 @@
                 />
                 <span class="i18n_checkbox_do_notify"></span>
               </label>
-            </div>
-            <div class="form-check">
               <button
                 data-type="offline"
                 class="i18n_button_upload_sound btn btn-default"
@@ -220,12 +242,15 @@
         </form>
 
       </div>
-
       <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+
         <h1>
           <img src="../images/spinner.png"/>
           <spam class="i18n_extension_name"></spam>
         </h1>
+        <p>
+          <span class="i18n_details"></span>
+        </p>
         <p>
           <a
             href="https://addons.mozilla.org/addon/am-i-online-/"
@@ -234,9 +259,11 @@
             <span id="version"></span
           ></a>
         </p>
-        <p>
-          <span class="i18n_details"></span>
-        </p>
+
+        <h3 class="i18n_whats_new"></h3>
+        <ul>
+          <li><span class="i18n_whats_new_1"></span></li>
+        </ul>
 
         <h3 class="i18n_roadmap"></h3>
         <ul>
@@ -292,7 +319,7 @@
 <script src="third-party/jquery-3.3.1.min.js"></script>
 
 <script src="third-party/popper.min.js"></script>
-<script src="third-party/tooltip.min.js"></script>
+<!-- script src="third-party/tooltip.min.js"></script -->
 <script src="third-party/bootstrap.min.js"></script>
 
 <script src="options.js"></script>

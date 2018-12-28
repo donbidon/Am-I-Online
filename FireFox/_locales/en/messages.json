@@ -24,14 +24,28 @@
     "message": "About"
   },
 
+
+  "button_clear": {
+    "message": "Clear"
+  },
+  "history_state_online": {
+    "message": "Online"
+  },
+  "history_state_offline": {
+    "message": "Offline"
+  },
+
   "request_period": {
-    "message": "Request's period, sec."
+    "message": "Request period, sec."
   },
   "request_period_deviation": {
-    "message": "Deviation of request's period, %"
+    "message": "Deviation of request period, %"
   },
   "response_timeout": {
-    "message": "Response's timeout, sec."
+    "message": "Response timeout, sec."
+  },
+  "history_storage_period": {
+    "message": "History storage period, hours"
   },
   "if_became_online": {
     "message": "If became online"
@@ -85,6 +99,12 @@
   "version": {
     "message": "Version"
   },
+  "whats_new": {
+    "message": "What's new"
+  },
+  "whats_new_1": {
+    "message": "State (online/offline) history tab added."
+  },
   "details": {
     "message": "This add-on periodically checks for internet connection and notifies you if status was changed by popup window and separate online/offline sound alerts."
   },
@@ -92,7 +112,7 @@
     "message": "Roadmap"
   },
   "roadmap_1": {
-    "message": "Notifications history tab, filtering by date/time, event type."
+    "message": "Filtering history by date/time, event type."
   },
   "social_network_groups": {
     "message": "Social Network Groups"

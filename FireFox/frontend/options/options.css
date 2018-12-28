@@ -86,11 +86,33 @@ div.tab-pane a {
   border-bottom: 1px dashed #8AD;
 }
 
-/* Tab "Settings" { */
+/* Tab "History" { */
 
-fieldset.urls {
-  padding-bottom: 10px;
+#historyContent {
+  overflow-y: scroll;
+  max-height: 500px;
+  resize: vertical;
 }
+
+#historyTable td {
+  padding: 2px 8px 2px 2px;
+}
+
+#historyTable td.online, #historyTable td.offline {
+  font-weight: bold;
+}
+
+#historyTable td.online {
+  color: green;
+}
+
+#historyTable td.offline {
+  color: gray;
+}
+
+/* } Tab "History" */
+
+/* Tab "Settings" { */
 
 input[type='number'] {
   /* line-height: 24px;
@@ -102,6 +124,14 @@ input[type='number'] {
 div.form-check label {
   cursor: pointer;
   font-weight: normal;
+}
+
+span.i18n_checkbox_do_notify {
+  padding-right: 10px;
+}
+
+fieldset.urls {
+  padding-bottom: 10px;
 }
 
 div.buttons {

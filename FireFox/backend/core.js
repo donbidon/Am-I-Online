@@ -32,6 +32,12 @@ browser.runtime.onMessage.addListener((request) => {
             });
             break; // case "reinit"
 
+        case "reloadOptions":
+            getOptions().then((options) => {
+                _options = options;
+            });
+            break; // case "reloadOptions"
+
         default:
             console.warn(`Unsupported command "${request.command}"`);
     }
@@ -75,18 +81,47 @@ function _playSound(type, data) {
 }
 
 function _setState(state) {
-    _requestSent = false;
     if (_state === state) {
+        _requestSent = false;
         return;
     }
 
+    console.log("Changing state to", state);
+
     let
-        time = (new Date).toLocaleTimeString(browser.i18n.getUILanguage()),
+        current = Date.now(),
+        border = current - _options.storage.historyStoragePeriod * 60 * 60 * 1000,
+        olderFound = false,
+        history = _options.storage.history,
+        time = (new Date(current)).toLocaleTimeString(browser.i18n.getUILanguage()),
         stateString = state ? "online" : "offline",
         iconNameTail = state ? "" : "-offline",
         title = browser.i18n.getMessage("notification_title", time);
 
     _state = state;
+
+    history.push({
+        "t": current,
+        "s": state
+    });
+    // Cut history by border
+    if (_options.storage.historyStoragePeriod > 0) {
+        for (let i = 0; i < history.length; ++i) {
+            if (history[i].t < border) {
+                olderFound = true;
+            } else {
+                break;
+            }
+        }
+        if (olderFound) {
+            console.log(`Found at position ${i} with t = ${history[i].t}`);///
+            history = history.slice(i + 1);
+        }
+    }
+
+    browser.storage.local.set(_options.storage).catch((e) => {
+        console.error(e);
+    });
 
     browser.browserAction.setIcon({
         "path": {
@@ -108,16 +143,19 @@ function _setState(state) {
         if (_options.storage.sound.usage[stateString]) {
             _playSound(stateString, _options.storage.sound.data[stateString]);
         }
+        _requestSent = false;
     }
 }
 
 function _doRequest() {
     if (_requestSent) {
+        console.log("Request sent already");///
         return false;
     }
 
     _requestSent = true;
 
+    console.log("Sending request...");///
     XMLHttpRequestAsPromise({
         "method": "GET",
         "url": _options.storage.urls[0],

@@ -24,7 +24,18 @@
     "message": "О дополнении"
   },
 
- "request_period": {
+
+  "button_clear": {
+    "message": "Очистить"
+  },
+  "history_state_online": {
+    "message": "Встало"
+  },
+  "history_state_offline": {
+    "message": "Пррр...опало"
+  },
+
+  "request_period": {
     "message": "Период обновления, сек."
   },
   "request_period_deviation": {
@@ -32,6 +43,9 @@
   },
   "response_timeout": {
     "message": "Время ожидания ответа, сек."
+  },
+  "history_storage_period": {
+    "message": "Срок хранения истории, часы"
   },
   "if_became_online": {
     "message": "При появлении подключения"
@@ -84,6 +98,12 @@
 
   "version": {
     "message": "Версия"
+  },
+  "whats_new": {
+    "message": "Новое в версии"
+  },
+  "whats_new_1": {
+    "message": "Добавлена вкладка истории состояний (онлайн/оффлайн)."
   },
   "details": {
     "message": "Данное дополнение проверяет наличие подключения к интернету и уведомляет о пропадании/восстановлении соединения всплавающим окном и разными звуковыми сигналами для онлайн/оффлайн состояния."

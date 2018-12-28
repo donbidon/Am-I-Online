@@ -5,7 +5,7 @@
   "default_locale": "en",
   "name": "__MSG_extension_name__",
   "description": "__MSG_extension_description__",
-  "version": "0.1.2",
+  "version": "0.1.3",
 
   "applications": {
     "gecko": {
@@ -25,7 +25,8 @@
     "scripts": [
       "backend/XMLHttpRequestAsPromise.js",
       "backend/Request.js",
-      "backend/core.js"
+      "backend/core.js",
+      "backend/updates.js"
     ]
   },
 
