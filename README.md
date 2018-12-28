@@ -1,12 +1,12 @@
-[![Mozilla Add-on](https://img.shields.io/amo/v/am-i-online-.svg)](https://addons.mozilla.org/addon/am-i-online-/)
+Mozilla: [![Mozilla Add-on](https://img.shields.io/amo/v/am-i-online-.svg)](https://addons.mozilla.org/addon/am-i-online-/)
 [![Mozilla Add-on](https://img.shields.io/amo/d/am-i-online-.svg)](https://addons.mozilla.org/en-US/addon/am-i-online-/)
 [![Mozilla Add-on](https://img.shields.io/amo/stars/am-i-online-.svg)](https://addons.mozilla.org/addon/am-i-online-/)
 [![Mozilla Add-on](https://img.shields.io/amo/users/am-i-online-.svg)](https://addons.mozilla.org/addon/am-i-online-/)
 
-[![GitHub license](https://img.shields.io/github/license/donbidon/Am-I-Online.svg)](https://github.com/donbidon/Am-I-Online/blob/master/LICENSE)
+GitHub: [![GitHub license](https://img.shields.io/github/license/donbidon/Am-I-Online.svg)](https://github.com/donbidon/Am-I-Online/blob/master/LICENSE)
 ![Github All Releases](https://img.shields.io/github/downloads/donbidon/Am-I-Online/total.svg)
 
-[![Donate to liberapay](http://img.shields.io/liberapay/receives/don.bidon.svg?logo=liberapay)](https://liberapay.com/don.bidon/donate)
+Liberapay: [![Donate to liberapay](http://img.shields.io/liberapay/receives/don.bidon.svg?logo=liberapay)](https://liberapay.com/don.bidon/donate)
 
 # Am-I-Online? (Mozilla FireFox add-on)
 Internet connection checker.
