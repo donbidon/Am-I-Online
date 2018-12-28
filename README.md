@@ -8,8 +8,10 @@ GitHub: [![GitHub license](https://img.shields.io/github/license/donbidon/Am-I-O
 
 Liberapay: [![Donate to liberapay](http://img.shields.io/liberapay/receives/don.bidon.svg?logo=liberapay)](https://liberapay.com/don.bidon/donate)
 
-# Am-I-Online? (Mozilla FireFox add-on)
+# Am-I-Online?
 Internet connection checker.
+
+[Download Mozilla FireFox add-on](https://addons.mozilla.org/addon/am-i-online-/).
 
 ### Social Network Groups
 
