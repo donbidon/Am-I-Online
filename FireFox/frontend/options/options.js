@@ -5,6 +5,25 @@ const
 
 let _options;
 
+browser.runtime.onMessage.addListener((request) => {
+    // console.log(`Iframe received runtime command "${request.command}"}`);///
+    // console.log(request);///
+    if ("options" !== request.target) {
+        return;
+    }
+
+    switch (request.command) {
+        case "updateHistoryTab":
+            _loadOptions().then(() => {
+                _updateHistoryTab(true);
+            })
+            break;
+
+        default:
+            console.error(`Unsupported command "${request.command}"`);
+    }
+});
+
 // Common functions {
 
 function _loadOptions() {
@@ -44,13 +63,38 @@ function _discardFormSubmission(evt) {
 
 // Tab "History" functions {
 
-function _updateHistoryTab() {
+function _updateHistoryTab(onInit) {
     $("#historyTableBody").html("");
-    for (let record of _options.storage.history) {
+    if (true === onInit) {
+        $("#type").val(-1);
+        $("#from").val("");
+        $("#to").val("");
+    }
+    let history = _options.storage.history;
+    if (history.length < 1) {
+        return;
+    }
+    let
+        kind = parseInt($("#kind").val()),
+        from = $("#from").val(),
+        to = $("#to").val();
+    for (let i = 0; i < history.length; i++) {
         let
-            state = (record.s ? "online" : "offline");
+            record = history[i],
+            dt = (new Date(record.t)).toLocaleString();
+        if (
+            (true !== onInit) && (
+                ((-1 !== kind) && (kind != record.s)) ||
+                (("" !== from) && (from > dt)) ||
+                (("" !== to) && (dt > to))
+            )
+        ) {
+            continue;
+        }
+        let
+            state = (record.s ? "online" : "offline"),
             scope = {
-                "dt": new Date(record.t).toLocaleString(),
+                "dt": dt,
                 "class": state,
                 "state": browser.i18n.getMessage(
                     "history_state_" + state
@@ -58,6 +102,14 @@ function _updateHistoryTab() {
             },
             row = TENgine.r("historyRow", scope);
         $("#historyTableBody").append(row);
+        if (true === onInit) {
+            if (0 == i) {
+                $("#from").val(dt);
+            }
+            if ((history.length - 1) == i) {
+                $("#to").val(dt);
+            }
+        }
     }
 }
 
@@ -261,7 +313,9 @@ $(document).ready(() => {
             console.error(e);
         });
     });
+    $("#applyHistoryFilter").click(_updateHistoryTab);
     $("#formHistory").submit(_discardFormSubmission);
+    $("#formHistory").change(_updateHistoryTab);
 
     // } Tab "History"
     // Tab "Settings" {
@@ -310,7 +364,7 @@ $(document).ready(() => {
             _saveOptions(false);
         });
 
-        _updateHistoryTab();
+        _updateHistoryTab(true);
 
         // Hides spinner, shows content
         $("#loader").fadeOut(() => {

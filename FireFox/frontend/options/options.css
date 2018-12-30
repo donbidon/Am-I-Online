@@ -88,6 +88,10 @@ div.tab-pane a {
 
 /* Tab "History" { */
 
+#buttonClear {
+  margin-right: 10px;
+}
+
 #historyContent {
   overflow-y: scroll;
   max-height: 500px;

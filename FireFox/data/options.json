@@ -41,7 +41,7 @@
   "borders": {
     "production": {
       "requestPeriod": {
-        "min": 60,
+        "min": 30,
         "max": -1
       },
       "requestPeriodDeviation": {
@@ -49,12 +49,12 @@
         "max": 100
       },
       "responseTimeout": {
-        "min": 5,
+        "min": 2,
         "max": 30
       },
       "historyStoragePeriod": {
-        "min": 24,
-        "max": 24
+        "min": 0,
+        "max": -1
       }
     },
     "development": {

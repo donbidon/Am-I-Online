@@ -28,11 +28,23 @@
   "button_clear": {
     "message": "Clear"
   },
+  "state": {
+    "message": "State:"
+  },
+  "both": {
+    "message": "Both"
+  },
   "history_state_online": {
     "message": "Online"
   },
   "history_state_offline": {
     "message": "Offline"
+  },
+  "from": {
+    "message": "From:"
+  },
+  "to": {
+    "message": "To:"
   },
 
   "request_period": {
@@ -46,6 +58,9 @@
   },
   "history_storage_period": {
     "message": "History storage period, hours"
+  },
+  "history_storage_comment": {
+    "message": "(0 means unlimited)"
   },
   "if_became_online": {
     "message": "If became online"
@@ -103,7 +118,7 @@
     "message": "What's new"
   },
   "whats_new_1": {
-    "message": "State (online/offline) history tab added."
+    "message": "History filter added."
   },
   "details": {
     "message": "This add-on periodically checks for internet connection and notifies you if status was changed by popup window and separate online/offline sound alerts."
@@ -112,7 +127,7 @@
     "message": "Roadmap"
   },
   "roadmap_1": {
-    "message": "Filtering history by date/time, event type."
+    "message": "Multiple links to check connection."
   },
   "social_network_groups": {
     "message": "Social Network Groups"

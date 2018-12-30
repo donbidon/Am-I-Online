@@ -23,7 +23,7 @@
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item" data-placement="bottom" title="history">
         <a
-          class="i18n_tab_history nav-link disabled"
+          class="i18n_tab_history nav-link"
           data-toggle="tab"
           href="#history"
           role="tab"
@@ -55,10 +55,25 @@
 
         <form id="formHistory">
           <fieldset class="form-group">
-            <div class="buttons">
-              <button id="buttonClear" class="i18n_button_clear btn btn-warning"></button>
-            </div>
-          </fieldset>
+            <button id="buttonClear" class="i18n_button_clear btn btn-warning"></button>
+            <label for="kind">
+              <span class="i18n_state"></span>
+              <select id="kind" class="form-control">
+                <option value="-1" class="i18n_both" selected="true"></option>
+                <option value="1" class="i18n_history_state_online"></option>
+                <option value="0" class="i18n_history_state_offline"></option>
+              </select>
+            </label>
+            <label for="from">
+              <span class="i18n_from"></span>
+              <input id="from" type="datetime-local" class="form-control"/>
+            </label>
+            <label for="to">
+              <span class="i18n_to"></span>
+              <input id="to" type="datetime-local" class="form-control"/>
+            </label>
+            <button id="applyHistoryFilter" class="i18n_button_apply btn btn-success"></button>
+        </fieldset>
 
         </form>
 
@@ -157,6 +172,7 @@
           <div class="form-group">
             <label for="historyStoragePeriod" class="i18n_history_storage_period"></label>
             <input id="historyStoragePeriod" type="number" class="form-control"/>
+            <span class="i18n_history_storage_comment"></span>
           </div>
 
           <fieldset class="form-group">

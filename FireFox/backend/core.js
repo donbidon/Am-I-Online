@@ -114,7 +114,7 @@ function _setState(state) {
             }
         }
         if (olderFound) {
-            console.log(`Found at position ${i} with t = ${history[i].t}`);///
+            // console.log(`Found at position ${i} with t = ${history[i].t}`);///
             history = history.slice(i + 1);
         }
     }
@@ -145,17 +145,24 @@ function _setState(state) {
         }
         _requestSent = false;
     }
+    // updateHistoryTab
+
+    browser.runtime.sendMessage({
+        "target": "options",
+        "command": "updateHistoryTab"
+    }).catch((e) => {
+    });
 }
 
 function _doRequest() {
     if (_requestSent) {
-        console.log("Request sent already");///
+        // console.log("Request sent already");///
         return false;
     }
 
     _requestSent = true;
 
-    console.log("Sending request...");///
+    // console.log("Sending request...");///
     XMLHttpRequestAsPromise({
         "method": "GET",
         "url": _options.storage.urls[0],
