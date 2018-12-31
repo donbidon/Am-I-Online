@@ -139,7 +139,7 @@ function _checkboxChanged(evt) {
         target = $(evt.target).attr("data-target"),
         type = $(evt.target).attr("data-type"),
         checked = $(evt.target).prop("checked");
-    if ("requestData" === target) {
+    if ("doNotify" === target) {
         _options.storage[target][type] = checked;
     } else {
         _options.storage.sound.usage[type] = checked;
