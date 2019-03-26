@@ -86,7 +86,7 @@ function _setState(state) {
         return;
     }
 
-    console.log("Changing state to", state);
+    // console.log("Changing state to", state);
 
     let
         current = Date.now(),
@@ -106,7 +106,9 @@ function _setState(state) {
     });
     // Cut history by border
     if (_options.storage.historyStoragePeriod > 0) {
-        for (let i = 0; i < history.length; ++i) {
+        let i;
+
+        for (i = 0; i < history.length; ++i) {
             if (history[i].t < border) {
                 olderFound = true;
             } else {
