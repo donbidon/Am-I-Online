@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 2px 6px;
+}
+
+#state {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
